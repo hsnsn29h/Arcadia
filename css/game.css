@@ -1,23 +1,52 @@
-.background    { background-image: url("/assets/city.png");
-                 background-position: center; 
-                 background-size: cover;
-                 table-layout: fixed;
-                 border-spacing: 0;   }
-.background td { padding: 0;          }
-.lava          { background-image: url("/assets/fire.png");
-  background-position: center; 
-  background-size: cover; }
-.wall          { background-image: url("/assets/brick-wall.png");
-  background-position: center; 
-  background-size: cover; }
+body,
+html {
+  margin: 0;
+}
 
-.actor  { position: absolute;  }
-.coin   { background-image: url("/assets/firewall.png");
-  background-position: center; 
-  background-size: cover; }
-.player { background-image: url("/assets/player.png");
-  background-position: center; 
-  background-size: cover; }
+body {
+  width: 100%;
+  height: 100%;
+  background: gold;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  transform-origin: 0 0;
+  scale: 3;
+}
+.background {
+  background-image: url("/assets/city.png");
+  background-position: center;
+  background-size: cover;
+  table-layout: fixed;
+  border-spacing: 0;
+}
+.background td {
+  padding: 0;
+}
+.lava {
+  background-image: url("/assets/fire.png");
+  background-position: center;
+  background-size: cover;
+}
+.wall {
+  background-image: url("/assets/brick-wall.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.actor {
+  position: absolute;
+}
+.coin {
+  background-image: url("/assets/firewall.png");
+  background-position: center;
+  background-size: cover;
+}
+.player {
+  background-image: url("/assets/player.png");
+  background-position: center;
+  background-size: cover;
+}
 
 .game {
   overflow: hidden;
@@ -28,8 +57,9 @@
 
 .lost .player {
   background-image: url("/assets/dead.png");
-  background-position: center; 
-  background-size: cover; }
+  background-position: center;
+  background-size: cover;
+}
 .won .player {
   box-shadow: -4px -7px 8px white, 4px -7px 8px white;
 }

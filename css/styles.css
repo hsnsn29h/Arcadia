@@ -1,0 +1,214 @@
+@font-face {
+  src: url(/assets/fonts/Inter.ttf);
+  font-family: "Inter";
+}
+
+@font-face {
+  src: url(/assets/fonts/IMFellEnglish-Regular.ttf);
+  font-family: "IM FELL English";
+}
+
+@font-face {
+  src: url(/assets/fonts/NeonRetro.otf) format("opentype");
+  font-family: "Neon";
+}
+
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background-color: #04172d;
+}
+
+.page-header {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  background-image: url("/assets/images/MainPage.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  margin: 1em 2em 1em 1em;
+  display: flex;
+}
+
+nav {
+  display: flex;
+  width: 62.25rem;
+  height: 3.125rem;
+  padding: 5px 5px 5px 20px;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(180deg, #9c223f 0%, #9a229c 100%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 99px;
+}
+
+ul {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 513px;
+  height: 36px;
+  justify-content: left;
+  align-items: center;
+  gap: 30px;
+}
+
+li {
+  list-style: none;
+}
+
+.nav-item a {
+  color: #fff;
+  font-family: Inter;
+  font-size: 16px;
+  text-wrap: nowrap;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  transition: 0.25s ease-in-out;
+}
+
+.nav-item :hover {
+  transition: 0.25s ease-in-out;
+  font-weight: bold;
+  border-bottom: 1px solid aliceblue;
+}
+
+.vl {
+  border-left: 2px solid aliceblue;
+  height: 20px;
+}
+
+.login a {
+  color: #00d1ff;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  transition: 0.25s ease-in-out;
+  padding: 5px;
+}
+
+.login :hover {
+  color: #00ff73;
+  transition: 0.25s ease-in-out;
+  border-bottom: 5px solid #00ff73;
+  border-top: 5px solid #00ff73;
+  border-radius: 99px;
+}
+
+button {
+  display: flex;
+  padding: 5px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 99px;
+  background: #fff;
+  border: none;
+  margin: 0px 5px 0px 0px;
+}
+
+button:hover {
+  cursor: pointer;
+  background: linear-gradient(180deg, rgb(154, 240, 240) 0%, #9adac4 100%);
+  transition: 0.5s all ease-in;
+}
+
+a {
+  text-decoration: none;
+}
+
+.website-name {
+  padding-top: 3px;
+  color: rgb(255, 255, 255);
+  font-family: Neon;
+  letter-spacing: 0.3rem;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 24px;
+  position: relative;
+}
+
+.paragraph-flex {
+  display: flex;
+  padding: 100px 130px;
+  justify-content: center;
+  align-items: center;
+  gap: 75px;
+  align-self: stretch;
+}
+
+.paragraph {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.subheading {
+  align-self: stretch;
+  color: #79969c;
+  text-align: center;
+  font-family: IM FELL English;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.paragraph-content {
+  align-self: stretch;
+  color: #cbd4d5;
+  text-align: center;
+  font-family: IM FELL English;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.vl-paragraph {
+  width: 1px;
+  height: 379px;
+  background: #232d33;
+}
+
+h3 {
+  color: #eef4f8;
+  text-align: center;
+  font-family: IM FELL English;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/*-------------------- Games Page CSS -------------------------*/
+
+.page-header-games {
+  height: 1025px;
+  width: 100%;
+  display: flex;
+  background-image: url("/assets/images/GamePage.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
