@@ -1,7 +1,7 @@
 var levelChars = {
-  ".": "empty", "#": "wall", "+": "lava",
+  ".": "empty", "#": "wall", "+": "spike",
   "@": Player, "o": Coin,
-  "=": Lava, "|": Lava, "v": Lava
+  "=": Fireball, "|": Fireball, "v": Spike
 };
 
 

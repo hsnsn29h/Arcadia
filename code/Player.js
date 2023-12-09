@@ -12,16 +12,19 @@ class Player {
     }
   }
   
-  Player.prototype.size = new Vec(0.8, 1.5);
+  Player.prototype.size = new Vec(0.9, 1.5);
 
 
-  var playerXSpeed = 7
+var playerXSpeed = 7
 var gravity = 30;
 var jumpSpeed = 14;
 
 Player.prototype.update = function(time, state, keys) {
+
+
+
   let xSpeed = 0;
-  if (keys.ArrowLeft) xSpeed -= playerXSpeed;
+  if (keys.ArrowLeft) {xSpeed -= playerXSpeed;}
   if (keys.ArrowRight) xSpeed += playerXSpeed;
   let pos = this.pos;
   let movedX = pos.plus(new Vec(xSpeed * time, 0));
@@ -30,6 +33,7 @@ Player.prototype.update = function(time, state, keys) {
   }
 
   let ySpeed = this.speed.y + time * gravity;
+
   let movedY = pos.plus(new Vec(0, ySpeed * time));
   if (!state.level.touches(movedY, this.size, "wall")) {
     pos = movedY;
@@ -38,6 +42,8 @@ Player.prototype.update = function(time, state, keys) {
   } else {
     ySpeed = 0;
   }
+
+  
   return new Player(pos, new Vec(xSpeed, ySpeed));
 };
 

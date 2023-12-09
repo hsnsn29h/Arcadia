@@ -19,10 +19,13 @@ function runAnimation(frameFunc) {
   function frame(time) {
     if (lastTime != null) {
       let timeStep = Math.min(time - lastTime, 100) / 1000;
+      //let fps = (1/(time/1000 - lastTime/1000));
+      //if(fps < 100) console.log('fps drop: ' , fps.toFixed(2));
+      //console.log(fps.toFixed(2));
       if (frameFunc(timeStep) === false) return;
     }
     lastTime = time;
-    requestAnimationFrame(frame);
+     requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
 }
@@ -41,6 +44,7 @@ function runLevel(level, Display) {
         ending -= time;
         return true;
       } else {
+        console.log(state.status);
         display.clear();
         resolve(state.status);
         return false;
@@ -50,6 +54,10 @@ function runLevel(level, Display) {
 }
 
 async function runGame(plans, Display) {
+  var audio = new Audio('/assets/music.mp3');
+  audio.loop = true;
+  audio.volume = 0.25;
+  audio.play();
   for (let level = 0; level < plans.length;) {
     let status = await runLevel(new Level(plans[level]),
                                 Display);

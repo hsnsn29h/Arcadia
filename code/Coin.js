@@ -17,9 +17,17 @@ class Coin {
   Coin.prototype.size = new Vec(0.8, 0.8);
 
   Coin.prototype.collide = function(state) {
+    var audio = new Audio('/assets/collect.wav');
+    audio.preload = 'auto';
+    audio.play();
     let filtered = state.actors.filter(a => a != this);
     let status = state.status;
-    if (!filtered.some(a => a.type == "coin")) status = "won";
+    if (!filtered.some(a => a.type == "coin")) {
+      status = "won";
+      var audio = new Audio('/assets/win.ogg');
+      audio.preload = 'auto';
+      audio.play();
+    }
     return new State(state.level, filtered, status);
   };
 
