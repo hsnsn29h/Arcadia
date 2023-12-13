@@ -1,0 +1,101 @@
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url('images/abstract-futuristic-background-design_23-2148403397.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+
+    font-size: 80px;
+    color: aliceblue;
+}
+
+h2{
+
+    font-size: 60px;
+    color: aliceblue;
+}
+
+
+#board {
+    height: 640px;
+    width: 730px;
+    background-color: rgba(0, 0, 255, 0.5); /* Adjust the opacity as needed */
+    border: 10px solid navy;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tile {
+    height: 80px;
+    width: 80px;
+    margin: 7px;
+    background-color: white;
+    border-radius: 50%;
+    border: 5px solid navy;
+    
+}
+
+.red-piece {
+    background-color: red;
+}
+
+.yellow-piece {
+    background-color: yellow;
+}
+
+#back-button {
+    font-size: 50px;
+    padding: 10px 20px;
+    margin: 0px;
+    background: transparent;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    left: 00px; 
+    top: 00px;
+}
+
+
+#home-button {
+    font-size: 40px;
+    padding: 20px 10px;
+    margin: 0px;
+    background: transparent;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    right: 7px;
+    top: 00px;
+}
+
+
+#restart-button{
+    font-size: 40px;
+    padding: 10px 10px;
+    margin: 0px;
+    background: transparent;
+    color: white;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    position:fixed;
+    margin-left: -27px;
+
+}
+

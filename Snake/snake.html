@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="snake.css" />
+  </head>
+
+  <body>
+    <a href="/index.html">
+      <button id="home-button" onclick="goHome()">
+        <i class="fa fa-home"></i>
+      </button>
+    </a>
+    <a href="/games.html">
+      <button id="back-button" onclick="goBack()">&#8592;</button>
+    </a>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div id="scoreText">0</div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <div id="gameContainer">
+      <canvas
+        class=".disable-scroll"
+        id="gameBoard"
+        width="700"
+        height="700"
+      ></canvas>
+      <br />
+      <br />
+      <br />
+      <button id="resetBtn" onclick="restartGame()">
+        <i class="fa fa-repeat"></i>
+      </button>
+    </div>
+
+    <script src="snake.js"></script>
+  </body>
+</html>

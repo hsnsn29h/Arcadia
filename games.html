@@ -2,79 +2,98 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="css/styles.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=2.5" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
 
-  <body>
+  <body class="game-body">
     <div class="page-header-games">
       <header>
         <nav>
           <a href="index.html">
-            <span class="website-name"> Arcadia </span>
+            <h1 class="website-name">Arcadia</h1>
           </a>
           <ul>
             <li class="nav-item"><a href="index.html">Home</a></li>
             <li class="nav-item"><a href="games.html">Games</a></li>
             <li class="nav-item"><a href="index.html">Board tracker</a></li>
-            <li class="nav-item"><a href="index.html">About</a></li>
-            <li class="nav-item"><a href="index.html">Contact</a></li>
+            <li class="nav-item"><a href="about.html">About</a></li>
+            <li class="nav-item"><a href="contact.html">Contact</a></li>
             <div class="vl"></div>
             <li class="login"><a href="index.html">Login</a></li>
           </ul>
-          <button onclick="window.location.href='platformer.html'">
+          <button
+            class="platformer-button"
+            onclick="window.location.href='platformer.html'"
+          >
             Play our new platformer
             <img src="assets/images/controller.png" alt="" />
           </button>
         </nav>
       </header>
     </div>
-
-    <div class="paragraph-flex">
-      <article class="paragraph">
-        <h3>Play your favourite Games</h3>
-        <p class="subheading">
-          Whether old, new, or unheard of. We got it all!
-        </p>
-        <p class="paragraph-content">
-          Join the Quest for the Lost Orb and become the legendary hero the
-          world needs. The Quest for the Lost Orb is about to begin. An ancient
-          prophecy speaks of a hero destined to find the Lost Orb, a powerful
-          relic capable of restoring the balance between good and evil. Assemble
-          a team of brave companions, explore distant lands, and face formidable
-          opponents to fulfill your destiny.
-        </p>
-        <img src="assets/images/ArticleFootnote.png" />
-      </article>
-      <div class="vl-paragraph"></div>
-      <article class="paragraph">
-        <h3>The Alliance of Kingdoms</h3>
-        <p class="subheading">
-          Whether old, new, or unheard of. We got it all!
-        </p>
-        <p class="paragraph-content">
-          Join the Quest for the Lost Orb and become the legendary hero the
-          world needs. The Quest for the Lost Orb is about to begin. An ancient
-          prophecy speaks of a hero destined to find the Lost Orb, a powerful
-          relic capable of restoring the balance between good and evil. Assemble
-          a team of brave companions, explore distant lands, and face formidable
-          opponents to fulfill your destiny.
-        </p>
-        <img src="assets/images/ArticleFootnote.png" />
-      </article>
-      <div class="vl-paragraph"></div>
-      <article class="paragraph">
-        <h3>The Quest for the Lost Orb</h3>
-        <p class="subheading">Forge alliances to save the kingdoms!</p>
-        <p class="paragraph-content">
-          Unite with the kings and queens of the Kingdoms to repel the forces of
-          darkness. Darkness threatens to overwhelm the Realms. Join the
-          Alliance of Kingdoms and forge bonds with the monarchs of enchanted
-          lands. Strategize, develop your magical skills and prepare to face a
-          demonic army. Your courage and determination will be the keys to
-          preserving peace and prosperity in this fantastic universe.
-        </p>
-        <img src="assets/images/ArticleFootnote.png" />
-      </article>
+    <div class="game-container">
+      <h1 class="display-6">Games</h1>
+      <div class="hl-paragraph"></div>
+      <div class="game-flex">
+        <div class="game-card">
+          <img
+            class="game-image"
+            src="assets/images/cyberScoutCard.svg"
+            alt=""
+          />
+          <a href="platformer.html">
+            <button class="game-btn">
+              Start Playing
+              <img class="play-symbol" src="assets/images/play-symbol.svg" />
+            </button>
+          </a>
+        </div>
+        <div class="game-card">
+          <img class="game-image" src="assets/images/Connect4Card.svg" alt="" />
+          <a href="4connect/4connect.html">
+            <button class="game-btn">
+              Start Playing
+              <img class="play-symbol" src="assets/images/play-symbol.svg" />
+            </button>
+          </a>
+        </div>
+        <div class="game-card">
+          <img class="game-image" src="assets/images/TetrisCard.svg" alt="" />
+          <a href="">
+            <button class="game-btn">
+              Start Playing
+              <img class="play-symbol" src="assets/images/play-symbol.svg" />
+            </button>
+          </a>
+        </div>
+        <div class="game-card">
+          <img class="game-image" src="assets/images/SnakeCard.svg" alt="" />
+          <a href="Snake/snake.html">
+            <button class="game-btn">
+              Start Playing
+              <img class="play-symbol" src="assets/images/play-symbol.svg" />
+            </button>
+          </a>
+        </div>
+        <div class="game-card">
+          <img class="game-image" src="assets/images/PacManCard.svg" alt="" />
+          <a href="PACMAN/pacman.html">
+            <button class="game-btn">
+              Start Playing
+              <img class="play-symbol" src="assets/images/play-symbol.svg" />
+            </button>
+          </a>
+        </div>
+      </div>
     </div>
+
+    <footer>
+      Disclaimer: Any resemblance of real life figures/institutions/characters
+      is purely coincedential. With all rights reserved to each party(ies)
+      holding registered trademarks thereto, there is no intention of
+      commericial distribution to Arcadia nor any product under its current
+      status.
+    </footer>
   </body>
 </html>

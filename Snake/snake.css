@@ -1,0 +1,73 @@
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url("images/abstract-background-images-wallpaper-ai-generated_643360-49129.avif");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.disable-scroll {
+  overflow-y: hidden;
+}
+
+#gameContainer {
+  text-align: center;
+}
+
+#gameBoard {
+  border: 3px solid;
+}
+
+#scoreText {
+  font-family: "Permanent Marker", cursive;
+  font-size: 40px; /* Adjust the font size as needed */
+  position: absolute;
+  left: 50%;
+}
+
+#resetBtn {
+  font-family: "Permanent Marker", cursive;
+
+  font-size: 32px;
+
+  width: 100px;
+
+  height: 70px;
+
+  border: 4px solid;
+
+  border-radius: 15px;
+
+  cursor: pointer;
+
+  background: transparent;
+}
+
+#back-button {
+  font-size: 50px;
+  padding: 10px 20px;
+  margin: 0px;
+  background: transparent;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  left: 00px;
+  top: 00px;
+}
+
+#home-button {
+  font-size: 40px;
+  padding: 20px 10px;
+  margin: 0px;
+  background: transparent;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  right: 7px;
+  top: 00px;
+}
