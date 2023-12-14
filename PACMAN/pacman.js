@@ -24,7 +24,7 @@ class Boundary {
         c.drawImage(this.image, this.position.x, this.position.y)
     }
 }
-
+// making a class for the player, to draw and being able to update it
 class Player {
     constructor({
         position,
@@ -62,7 +62,7 @@ class Player {
         this.radians += this.openRate
     }
 }
-
+// making a class for the ghosts, to draw and being able to update it
 class Ghost {
     static speed = 2
     constructor({
@@ -93,7 +93,7 @@ class Ghost {
         this.position.y += this.velocity.y
     }
 }
-
+//making a class for the pellets for them to be drawn 
 class Pellet {
     constructor({
         position
@@ -110,7 +110,7 @@ class Pellet {
         c.closePath()
     }
 }
-
+//making a class for the powerup for it to be drawn 
 class PowerUp {
     constructor({
         position
@@ -127,7 +127,7 @@ class PowerUp {
         c.closePath()
     }
 }
-
+// making arrays for multiple things in the code
 const pellets = []
 const boundaries = []
 const powerUps = []
@@ -183,7 +183,7 @@ const keys = {
 let lastKey = ''
 
 let score = 0
-
+//map layout
 const map = [
     ['1', '-', '-', '-', '-', '-', '-', '-', '-', '-', '2'],
     ['|', '.', '.', '.', '.', '.', '.', '.', '.', '.', '|'],
@@ -199,8 +199,10 @@ const map = [
     ['|', '.', '.', '.', '.', '.', '.', '.', '.', 'p', '|'],
     ['4', '-', '-', '-', '-', '-', '-', '-', '-', '-', '3']
 ]
+
+//functions for returning to the main page, for popup, and for creating images for the map layout
 function returnToMainPage() {
-    window.location.href = "";
+    window.history.back();
     console.log("Returning to the main page...");
 }
 function showPopup(message) {
@@ -212,7 +214,7 @@ function createImage(src) {
     image.src = src
     return image
 }
-
+// going through each symbol in the map layout and createimage when needed
 map.forEach((row, i) => {
     row.forEach((symbol, j) => {
         switch (symbol) {
@@ -418,7 +420,7 @@ map.forEach((row, i) => {
         }
     })
 })
-
+//making collison code for the player and ghost
 function circleCollidesWithRectangle({
     circle,
     rectangle
@@ -437,11 +439,11 @@ function circleCollidesWithRectangle({
 
 
 let animationId
-
+//function to reset the game when it is game over or game won
 function resetGameElements() {
     score = 0;
     scoreEl.innerHTML = score;
-    // Reset pellets based on your game map
+    // Reset pellets 
     pellets.length = 0;
     map.forEach((row, i) => {
         row.forEach((symbol, j) => {
@@ -458,7 +460,7 @@ function resetGameElements() {
         });
     });
 
-    // Reset ghosts based on your initial configuration
+    // Reset ghosts 
     ghosts.length = 0;
     ghosts.push(
         new Ghost({
@@ -482,10 +484,10 @@ function resetGameElements() {
             },
             color: 'pink'
         })
-        // Add additional ghost instances based on your initial configuration
+        
     );
 
-    // Reset power-ups based on your game map
+    // Reset power-ups 
     powerUps.length = 0;
     map.forEach((row, i) => {
         row.forEach((symbol, j) => {
@@ -502,7 +504,7 @@ function resetGameElements() {
         });
     });
 
-    // ... (Add logic to reset any other game elements)
+   
 
     // Reset player position, velocity, and rotation
     player.position = {
@@ -515,7 +517,7 @@ function resetGameElements() {
 
 // Function to restart the game
 function restartGame() {
-    // Call the resetGameElements function to reset all game elements
+  
     resetGameElements();
 
     cancelAnimationFrame(animationId);
@@ -524,7 +526,7 @@ function restartGame() {
 
 
 
-
+//animating the movement accoording to keys pressed
 function animate() {
     animationId = requestAnimationFrame(animate)
     c.clearRect(0, 0, canvas.width, canvas.height)
@@ -647,7 +649,7 @@ function animate() {
     if (pellets.length === 0) {
         cancelAnimationFrame(animationId);
     
-        // Use setTimeout to ensure that the confirmation dialog appears after cancelAnimationFrame
+       
         setTimeout(() => {
             if (confirm('Congratulations! You Win!\nDo you want to play again?')) {
                
@@ -698,7 +700,7 @@ function animate() {
             scoreEl.innerHTML = score
         }
     }
-
+    //drawing the boundaries 
     boundaries.forEach((boundary) => {
         boundary.draw()
 
@@ -787,15 +789,13 @@ function animate() {
             ghost.prevCollisions = collisions
 
         if (JSON.stringify(collisions) !== JSON.stringify(ghost.prevCollisions)) {
-            // console.log('gogo')
+          
 
             if (ghost.velocity.x > 0) ghost.prevCollisions.push('right')
             else if (ghost.velocity.x < 0) ghost.prevCollisions.push('left')
             else if (ghost.velocity.y < 0) ghost.prevCollisions.push('up')
             else if (ghost.velocity.y > 0) ghost.prevCollisions.push('down')
 
-            console.log(collisions)
-            console.log(ghost.prevCollisions)
 
             const pathways = ghost.prevCollisions.filter((collision) => {
                 return !collisions.includes(collision)
@@ -834,7 +834,7 @@ function animate() {
 
             ghost.prevCollisions = []
         }
-        // console.log(collisions)
+    
     })
 
     if (player.velocity.x > 0) player.rotation = 0
@@ -844,7 +844,7 @@ function animate() {
 } // end of animate()
 
 animate()
-
+//eventlistener for key interaction
 addEventListener('keydown', ({
     key
 }) => {
