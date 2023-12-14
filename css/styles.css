@@ -501,3 +501,15 @@ label.fcf-label {
 .fcf-btn-block + .fcf-btn-block {
   margin-top: 0.5rem;
 }
+
+/* ---------------------------------------------- Log in page --------------------------- */
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  font-family: Inter;
+}
+
+.login-container input {
+  height: 2rem;
+}
