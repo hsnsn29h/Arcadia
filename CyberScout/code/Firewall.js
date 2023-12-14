@@ -25,7 +25,6 @@ Firewall.prototype.size = new Vec(0.8, 0.8);
 Firewall.prototype.collide = function(state) {
   // Play a collect sound when colliding with the firewall
   var audio = new Audio('assets/collect.wav');
-  audio.preload = 'auto';
   audio.play();
   
   // Filter out the current firewall from the list of actors
@@ -37,9 +36,8 @@ Firewall.prototype.collide = function(state) {
     // If no firewalls remain, the player has won
     status = "won";
     // Play a win sound
-    var audio = new Audio('assets/win.ogg');
-    audio.preload = 'auto';
-    audio.play();
+    var sound = new Audio('assets/win.ogg');
+    sound.play();
   }
   
   // Return a new state with the updated actor list and status

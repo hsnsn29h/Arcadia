@@ -1,14 +1,14 @@
-// Create an audio element for the game music and set the initial volume
-let music = new Audio('assets/music.mp3');
-let musicVolume = 0.25;
 
 // Class for outer methods and storing death counts
 class Game {
   static musicMute() {
     // Toggle music volume between 0 and the original volume
-    if (music.volume > 0) music.volume = 0;
-    else music.volume = musicVolume;
+    if (Game.music.paused == false) Game.music.pause();
+    else Game.music.play();
   }
+
+  // Create an audio element for the game music
+static music = new Audio('assets/music.mp3');
 
   // Static death counters for spikes, robots, bosses respectively 
   static deathsS = 0;
@@ -104,9 +104,10 @@ async function runGame(plans, Display) {
   let finishTime;
   
   // Set up and play the game music
-  music.loop = true;
-  music.volume = musicVolume;
-  music.play();
+  
+  Game.music.loop = true;
+  Game.music.volume = 0.25;
+  Game.music.play();
 
   // Loop through each level and run it
   for (let level = 0; level < plans.length;) {
@@ -117,14 +118,19 @@ async function runGame(plans, Display) {
       level++;
 
       // Change music for the last level
-      if (level == 5) {
-        music.src = "assets/chase.mp3";
-        music.loop = true;
-        musicVolume = 0.5;
+      let muted = Game.music.paused;
 
-        // Set the music volume if it's not muted
-        if (music.volume != 0) music.volume = musicVolume;
-        music.play();
+      if (level == 5) {
+        let muted = Game.music.paused;
+        Game.music.src = "assets/chase.mp3";
+        Game.music.loop = true;
+        Game.music.volume = 0.5;
+
+        // play music if it's not muted
+       
+        if(!muted) Game.music.play();
+
+        
       }
     }
   }

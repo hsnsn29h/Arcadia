@@ -20,7 +20,9 @@ class DOMDisplay {
 
     // Create a music button and set its onclick behavior
     let music = document.createElement("image");
-    music.id = "music-button";
+    if (Game.music.paused) music.id = "music-button2";
+    else
+      music.id = "music-button";
     music.onclick = function () {
       // Toggle music and change the button icon
       Game.musicMute();
