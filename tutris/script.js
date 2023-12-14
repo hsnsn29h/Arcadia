@@ -582,11 +582,8 @@
         return rgx.test(navigator.userAgent);
       },
       restart: function () {
-        this.clearTimers();
-        isStart = false;
-        document.getElementById('canvas').innerHTML = ''; // Clear the canvas
-        document.getElementById('start').style.display = 'block'; // Show the start button
-    
+        window.location.href = "tutris.html"; 
+
 
       },
     };
@@ -633,5 +630,5 @@
 }
 
 function goHome() {
-    window.location.href = "index.html"; 
+    window.location.href = "tutris.html"; 
 }
