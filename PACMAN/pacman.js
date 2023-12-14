@@ -75,7 +75,7 @@ class Ghost {
         this.radius = 15
         this.color = color
         this.prevCollisions = []
-        this.speed = 1
+        this.speed = 2
         this.scared = false
     }
 
