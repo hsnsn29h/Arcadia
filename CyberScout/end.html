@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            background-image: url("/assets/images/ArcadeCarpet.png");
+            text-align: center;
+            color: white;
+            display: flex;
+            font-size: 16px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        h1,
+        h2 {
+            background-color: black;
+        }
+
+        p {
+            background-color: rgb(38, 28, 28);
+            display: inline-block;
+        }
+
+        #firewall{
+            filter: hue-rotate(145deg);
+        }
+
+        img {
+
+            width: 52px;
+            display: inline-block;
+
+        }
+
+
+        #wasd,
+        #arrows {
+            filter: invert(100);
+            width: 192px;
+            margin: 16px;
+            height: 128px;
+
+        }
+
+        #player{
+            width: 32px;
+            filter: invert(100%);
+
+
+        }
+
+        button {
+            background-color: yellow;
+            font-weight: bold;
+            width: 128px;
+            box-shadow: 0px 0px 8px blue;
+            cursor: pointer;
+            color: red;
+            height: 64px;
+        }
+
+        .wrap {
+            position: relative;
+        }
+
+        #home{
+
+background: transparent;
+filter: hue-rotate(230deg);
+cursor: pointer;
+caret-color: transparent;
+
+
+}
+
+#home:hover{
+filter: invert(100);
+}
+        
+    </style>
+    <div class="wrap">
+        <section>
+            <h1>Congratulations!! You actually did it!</h1>
+            <p>I have to be honest, didn't think anyone would reach this far besides me XD</p>
+        </section>
+
+        <section>
+            <h2>Deaths:</h2>
+            <div class="row">
+            <p id ="spikesD"></p>
+            <img src="assets/spikes.png" id="firewall"> </img>
+        </div>
+        <div class="row">
+            <p id = "robotsD"></p>
+            <img src="assets/enemy.gif"></img>
+        </div>
+        <div class="row">
+            <p id = "bossD"></p>
+            <img src="assets/enemy_boss.gif"></img>
+        </div>
+        <div class="row">
+            <p id = "totalD"></p>
+            <img src="assets/player_idle.gif" id = "player"></img>
+        </div>
+        <div class="row">
+        <h2>Time: </h2>
+    </div>
+        <div class="row">
+        <p id="time"></p>
+    </div>
+        <div class="row">
+        <p>I am proud of you! Share your stats to the world!</p>
+    </div>
+        </section>
+        <img src="assets/home.png" id="home" onclick="home()"></img>
+    </div>
+</body>
+<script src="code/Game.js"></script>
+
+<script>
+
+let sound = new Audio('assets/cheer.mp3');
+sound.play();
+
+const spikesD = parseInt(localStorage.getItem("deathsS"));
+let element1 = document.getElementById("spikesD");
+element1.innerHTML = "Deaths by spikes: ".concat(" ", spikesD);
+
+const robotsD = parseInt(localStorage.getItem("deathsR"));
+let element2 = document.getElementById("robotsD");
+element2.innerHTML = "Deaths by robots: ".concat(" ", robotsD);
+
+const bossD = parseInt(localStorage.getItem("deathsB"));
+let element3 = document.getElementById("bossD");
+element3.innerHTML = "Deaths by angry robots: ".concat(" ", bossD);
+
+const totalD = spikesD + robotsD + bossD;
+let element4 = document.getElementById("totalD");
+element4.innerHTML = "Total deaths: ".concat(" ", totalD);
+
+let timeM = parseInt(localStorage.getItem("time"));
+const timeH = Math.floor(timeM / 60);
+timeM = Math.round(timeM - timeH*60);
+let element5 = document.getElementById("time");
+element5.innerHTML = ((("It took you : ".concat(" ", timeH)).concat(" ", "Hours and "))
+.concat(" ", timeM)).concat(" ", " Minutes to beat the game.");
+
+</script>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            background-image: url("/assets/images/ArcadeCarpet.png");
+            text-align: center;
+            color: white;
+            display: flex;
+            font-size: 16px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        h1,
+        h2 {
+            background-color: black;
+        }
+
+        p {
+            background-color: rgb(38, 28, 28);
+        }
+
+        #firewall {
+            filter: hue-rotate(145deg);
+        }
+
+        img {
+
+            width: 64px;
+
+        }
+
+        #wasd,
+        #arrows {
+            filter: invert(100);
+            width: 192px;
+            margin: 16px;
+            height: 128px;
+
+        }
+
+        button {
+            background-color: yellow;
+            font-weight: bold;
+            width: 128px;
+            box-shadow: 0px 0px 8px blue;
+            cursor: pointer;
+            color: red;
+            height: 64px;
+        }
+
+        .wrap {
+            position: relative;
+        }
+    </style>
+    <div class="wrap">
+        <section>
+            <h1>Controls:</h1>
+            <img src="assets/wasd.png" id="wasd"></img>
+            <img src="assets/arrows.png" id="arrows"></img>
+        </section>
+
+        <section>
+            <h2>Goal:</h2>
+            <p>Collect firewalls: </p>
+            <img src="assets/firewall.png" id="firewall"> </img>
+            <p>Be careful from the robots:</p>
+            <img src="assets/enemy.gif"></img>
+            <p>Don't give up!</p>
+            <p>And most importantly.... have fun!! ^^</p>
+        </section>
+
+        <button onclick="start()">Start the game!</button>
+    </div>
+</body>
+<script src="code/Game.js"></script>
+
+</html>

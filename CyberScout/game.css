@@ -1,0 +1,215 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+
+}
+
+body {
+  background-image: url("/assets/images/ArcadeCarpet.png");
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scale: 1.7;
+}
+
+
+
+
+
+
+.background {
+  background-image: url("assets/city.png");
+  background-position: center;
+  background-size: cover;
+  caret-color: transparent;
+  position: relative;
+  table-layout: fixed;
+  border-spacing: 0;
+}
+
+.background2 {
+  background-image: url("assets/city.png");
+  filter: hue-rotate(170deg);
+  filter: brightness(0.1);
+  background-position: center;
+  background-size: cover;
+  caret-color: transparent;
+  position: relative;
+  table-layout: fixed;
+  border-spacing: 0;
+}
+.background td {
+  padding: 0;
+}
+.spike {
+  background-image: url("assets/spikes.png");
+  background-size: 100% 100%;  
+
+}
+
+.robot {
+  background-image: url("assets/enemy.gif");
+  background-size: 100% 100%;  
+
+}
+
+.boss {
+  background-image: url("assets/enemy_boss.gif");
+  background-size: 100% 100%;  
+  box-shadow: 0px 0px 8px rgb(255, 0, 0)
+
+}
+.wall {
+  background-image: url("assets/block.png");
+  background-size: 100% 100%;  
+
+}
+
+.actor {
+  position: absolute;
+}
+.firewall {
+  background-image: url("assets/firewall.png");
+  filter: hue-rotate(145deg);
+  background-size: 100% 100%;  
+
+}
+.idleRight .player {
+  background-image: url("assets/player_idle.gif");
+  background-size: 100% 100%;  
+
+}
+
+.idleLeft .player {
+  background-image: url("assets/player_idle.gif");
+  transform: scaleX(-1);
+  background-size: 100% 100%;  
+
+}
+
+.runRight .player {
+  background-image: url("assets/player_run.gif");
+  background-size: 100% 100%;  
+
+}
+
+.runRightJump .player {
+  background-image: url("assets/player_jump.gif");
+  background-size: 100% 100%;  
+
+}
+
+.runLeft .player {
+  background-image: url("assets/player_run.gif");
+  transform: scaleX(-1);
+  background-size: 100% 100%;  
+
+}
+
+.runLeftJump .player {
+  background-image: url("assets/player_jump.gif");
+  transform: scaleX(-1);
+  background-size: 100% 100%;  
+
+}
+
+.jump .player {
+  background-image: url("assets/player_jump.gif");
+  background-size: 100% 100%;  
+
+}
+
+#screen {
+  border: 8px solid rgb(0, 0, 0);
+  box-shadow: 0px 0px 8px rgb(60, 25, 189);
+  overflow: hidden;
+  max-width: 856px;
+  max-height: 450px;
+  position: relative;
+}
+
+.game {
+  overflow: hidden;
+  max-width: 856px;
+  max-height: 450px;
+  position: relative;
+}
+
+#home-button {
+
+  position: absolute;
+  background: transparent;
+  background-image: url("assets/home.png");
+  background-size: cover;
+  filter: hue-rotate(230deg);
+  cursor: pointer;
+  left: 0px;
+  caret-color: transparent;
+  top: 0px;
+  margin: 8px;
+  z-index: 1;
+  width: 16px;
+  height: 16px;
+  
+}
+
+#home-button:hover{
+  filter: invert(100);
+}
+
+#music-button {
+
+  position: absolute;
+  background: transparent;
+  background-image: url("assets/music-note.png");
+  background-size: cover;
+  filter: hue-rotate(230deg);
+  cursor: pointer;
+  right: 0px;
+  caret-color: transparent;
+  top: 0px;
+  margin: 8px;
+  z-index: 1;
+  width: 16px;
+  height: 16px;
+}
+
+#music-button2 {
+
+  position: absolute;
+  background: transparent;
+  background-image: url("assets/music-note.png");
+  background-size: cover;
+  cursor: pointer;
+  right: 0px;
+  caret-color: transparent;
+  top: 0px;
+  margin: 8px;
+  z-index: 1;
+  width: 16px;
+  height: 16px;
+}
+
+#music-button:hover{
+  filter: invert(100);
+}
+
+#music-button2:hover{
+  filter: invert(100);
+}
+
+.lost .player {
+  filter: invert(100%);
+  background-size: 100% 100%;  
+
+}
+
+
+.won .player {
+  box-shadow: -4px -7px 8px rgb(255, 0, 0), 4px -7px 8px rgb(76, 0, 255);
+}
+
+
