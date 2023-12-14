@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arcadia: Login</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div class="fcf-body">
+      <form target="_parent" action="LoginSucess.html">
+        <div class="login-container">
+          <label for="email" class="fcf-label">Email address</label>
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="Enter email"
+          class="fcf-input-group"
+        />
+
+        <label for="password" class="fcf-label">Password</Form.Label>
+        <input
+          type="password"
+          name="password"
+          required
+          placeholder="Password"
+          class="fcf-input-group"
+        />
+
+        
+          <button
+            variant="primary"
+            type="submit"
+            class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block"
+            onclick="handelForm()"
+          >
+            Login
+          </button>
+        </div>
+        
+      </form>
+    </div>
+  </body>
+  <script> 
+
+  function handelForm() {
+
+    console.log(axios)
+
+    const [username, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [login, setLogin] = useState(false);
+
+    const handleSubmit = (e) => {
+    // prevent the form from refreshing the whole page
+    e.preventDefault();
+
+    // set configurations
+    const configuration = {
+      method: "post",
+      url: "login.php",
+      data: {
+        email,
+        password,
+      },
+    };
+
+    // make the API call
+    axios(configuration)
+      .then(() => {
+        setLogin(true);
+      })
+      .catch(() => {
+        e = new Error();
+      });
+  };
+
+  if (login === true) {
+    setEmail= username
+    setPassword = password
+    console.log("sucess!")
+     root = document.getElementById("root");
+     root.innerHTML +=
+        "<h1 className='display-6'> Login Successful. <a href='index.html'> Click this link to return to Arcadia </a> </h1>"
+  }
+  else {
+    console.log("sucess!")
+     root = document.getElementById("root");
+     root.innerHTML +=
+        "<h1 className='display-6'> Login Successful. <a href='index.html'> Click this link to return to Arcadia </a> </h1>"
+  }
+}</script>
+</html>
